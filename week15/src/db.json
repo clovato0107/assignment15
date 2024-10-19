@@ -6,12 +6,7 @@
       "artist": "Queen"
     },
     {
-      "id": "2",
-      "title": "Stairway to Heaven",
-      "artist": "Led Zeppelin"
-    },
-    {
-      "id":3,
+      "id": 3,
       "title": "for an angel",
       "artist": "paul van dyk"
     },
@@ -19,6 +14,13 @@
       "id": 0,
       "title": "test",
       "artist": "test"
+    },
+    {
+      "id": "a454",
+      "title": {
+        "title": "for an angel",
+        "artist": "paul van dyk"
+      }
     }
   ]
 }

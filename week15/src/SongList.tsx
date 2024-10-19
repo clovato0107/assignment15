@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Song } from './App';
-
+// props
 interface SongListProps {
   songs: Song[];
   onUpdateSong: (song: Song) => void;

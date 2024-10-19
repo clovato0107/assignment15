@@ -27,7 +27,11 @@ const App: React.FC = () => {
   };
 
   // Add a song
-  const addSong = (newSong: Song) => {
+  const addSong = (title: String, artist: String) => {
+    let newSong = {
+      title: title,
+      artist: artist,
+    };
     axios
       .post(URL, newSong)
       .then((response) => setSongs([...songs, response.data]))
@@ -57,7 +61,7 @@ const App: React.FC = () => {
         },
         body: JSON.stringify({ updateSong }),
       })
-      .then((response) =>  response.data)
+      .then((response) => response.data)
       .then(() => {
         setSongs(
           songs.map((song) => (song.id === updatedSong.id ? updatedSong : song))

@@ -4,7 +4,7 @@ import { Song } from './App';
 interface SongFormProps {
   onAddSong: (song: Song) => void;
 }
-
+// props
 const SongForm: React.FC<SongFormProps> = ({ onAddSong }) => {
   const [title, setTitle] = useState<string>('');
   const [artist, setArtist] = useState<string>('');
@@ -12,7 +12,7 @@ const SongForm: React.FC<SongFormProps> = ({ onAddSong }) => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (title && artist) {
-      onAddSong({ id: 0, title, artist }); // id will be assigned by the server
+      onAddSong({title, artist }); // id will be assigned by the server
       setTitle('');
       setArtist('');
     }
