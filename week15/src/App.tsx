@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import SongList from "./SongList";
 import SongForm from "./SongForm";
+import SongFormModal from "./SongFormModal";
 
 export interface Song {
   id: number;
@@ -11,6 +12,7 @@ export interface Song {
 
 const App: React.FC = () => {
   const [songs, setSongs] = useState<Song[]>([]);
+  const [show, setShow] = useState<Boolean>(false);
 
   const URL = "http://localhost:3000/songs";
   // Fetch the songs from the JSON server
@@ -28,12 +30,8 @@ const App: React.FC = () => {
 
   // Add a song
   const addSong = (title: String, artist: String) => {
-    let newSong = {
-      title: title,
-      artist: artist,
-    };
     axios
-      .post(URL, newSong)
+      .post(URL, title, artist)
       .then((response) => setSongs([...songs, response.data]))
       .catch((error) => console.error("Error adding song:", error));
   };
@@ -83,7 +81,9 @@ const App: React.FC = () => {
   return (
     <div className="App container">
       <h1>My Playlist</h1>
-      <SongForm onAddSong={addSong} />
+      {/* <SongForm onAddSong={addSong} /> */}
+      <SongFormModal show={show} setShow={setShow} />
+      <button onClick={() => setShow(!show)}>Add Song </button>
       <SongList
         songs={songs}
         onUpdateSong={updateSong}
