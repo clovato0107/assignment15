@@ -3,6 +3,7 @@ import axios from "axios";
 import SongList from "./SongList";
 import SongForm from "./SongForm";
 import SongFormModal from "./SongFormModal";
+import '../node_modules/bootstrap/dist/css/bootstrap.css'
 
 export interface Song {
   id: number;
