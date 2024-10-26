@@ -31,9 +31,13 @@ const App: React.FC = () => {
 
   // Add a song
   const addSong = (title: String, artist: String) => {
-    console.log("addSong ran");
+    console.log("addSong ran", title, artist);
+    let newSong ={
+      title:title,
+      artist:artist
+    }
     axios
-      .post(URL, title, artist)
+      .post(URL, newSong)
       .then((response) => setSongs([...songs, response.data]))
       .catch((error) => console.error("Error adding song:", error));
   };
