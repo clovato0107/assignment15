@@ -1,24 +1,19 @@
 {
   "songs": [
     {
-      "id": "0",
+      "id": 1,
       "title": "Bohemian Rhapsody",
       "artist": "Queen"
     },
     {
-      "id": "1",
+      "id": 2,
       "title": "for an angel",
       "artist": "paul van dyk"
     },
     {
-      "id": "2",
+      "id": 3,
       "title": "test",
       "artist": "test"
-    },
-    {
-      "id": "44f7",
-      "title": "test",
-      "artist": "tests"
     }
-  ]
+   ]
 }

@@ -3,7 +3,7 @@ import axios from "axios";
 import SongList from "./SongList";
 import SongForm from "./SongForm";
 import SongFormModal from "./SongFormModal";
-import '../node_modules/bootstrap/dist/css/bootstrap.css'
+import "../node_modules/bootstrap/dist/css/bootstrap.css";
 
 export interface Song {
   id: number;
@@ -31,6 +31,7 @@ const App: React.FC = () => {
 
   // Add a song
   const addSong = (title: String, artist: String) => {
+    console.log("addSong ran");
     axios
       .post(URL, title, artist)
       .then((response) => setSongs([...songs, response.data]))
@@ -83,7 +84,7 @@ const App: React.FC = () => {
     <div className="App container">
       <h1>My Playlist</h1>
       {/* <SongForm onAddSong={addSong} /> */}
-      <SongFormModal show={show} setShow={setShow} />
+      <SongFormModal show={show} setShow={setShow} addSong={addSong} />
       <button onClick={() => setShow(!show)}>Add Song </button>
       <SongList
         songs={songs}

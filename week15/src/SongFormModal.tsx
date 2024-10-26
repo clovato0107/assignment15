@@ -5,11 +5,15 @@ import Form from 'react-bootstrap/Form';
 import React, { useState } from 'react';
 
 interface ModalProps {
-  show: boolean,
-  setShow: (value: boolean) => void;
+  show: Boolean,
+  setShow: (value: Boolean) => void;
+  addSong: (
+    title:String,
+    artist:String,
+  ) =>void;
 }
 
-
+const SongFormModal: React.FC<ModalProps> = ({ show, setShow, addSong}) => { 
 const [songTitle, setSongTitle] = useState<String>("")
 const [artist, setArtist] = useState<String>("")
 
@@ -17,7 +21,10 @@ const [artist, setArtist] = useState<String>("")
   const handleShow = () => setShow(true);
 
   const submitSong = () => {
+    
     console.log(songTitle, artist)
+    addSong(songTitle, artist)
+
   }
 
   return (
@@ -44,7 +51,7 @@ const [artist, setArtist] = useState<String>("")
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button variant="primary" onClick={(e) => submitSong()}>
+          <Button variant="primary" onClick={() => submitSong()}>
             Save Changes
           </Button>
         </Modal.Footer>
