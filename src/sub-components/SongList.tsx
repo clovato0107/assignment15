@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Song } from "./App";
+import { Song } from "../App";
 // props
 interface SongListProps {
   songs: Song[];
