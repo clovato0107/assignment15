@@ -12,7 +12,7 @@ interface ModalProps {
     artist:String,
   ) =>void;
 }
-
+// props
 const SongFormModal: React.FC<ModalProps> = ({ show, setShow, addSong}) => { 
 const [songTitle, setSongTitle] = useState<String>("")
 const [artist, setArtist] = useState<String>("")
@@ -30,7 +30,7 @@ const [artist, setArtist] = useState<String>("")
   return (
     <div className='border border-2 border-black'>
      
-
+{/*Modal */}
       <Modal show={show} onHide={handleClose} >
         <Modal.Header closeButton>
           <Modal.Title>Favorite Song</Modal.Title>

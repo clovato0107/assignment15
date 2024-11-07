@@ -1,20 +1,20 @@
-import React, { useState } from 'react';
-import { Song } from './App';
+import React, { useState } from "react";
+import { Song } from "./App";
 
 interface SongFormProps {
   onAddSong: (song: Song) => void;
 }
 // props
 const SongForm: React.FC<SongFormProps> = ({ onAddSong }) => {
-  const [title, setTitle] = useState<string>('');
-  const [artist, setArtist] = useState<string>('');
+  const [title, setTitle] = useState<string>("");
+  const [artist, setArtist] = useState<string>("");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (title && artist) {
-      onAddSong({title, artist }); // id will be assigned by the server
-      setTitle('');
-      setArtist('');
+      onAddSong({ title, artist }); // id will be assigned by the server
+      setTitle("");
+      setArtist("");
     }
   };
 
@@ -40,4 +40,3 @@ const SongForm: React.FC<SongFormProps> = ({ onAddSong }) => {
 };
 
 export default SongForm;
-

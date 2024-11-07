@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Song } from './App';
+import React, { useState } from "react";
+import { Song } from "./App";
 // props
 interface SongListProps {
   songs: Song[];
@@ -7,7 +7,11 @@ interface SongListProps {
   onDeleteSong: (id: number) => void;
 }
 
-const SongList: React.FC<SongListProps> = ({ songs, onUpdateSong, onDeleteSong }) => {
+const SongList: React.FC<SongListProps> = ({
+  songs,
+  onUpdateSong,
+  onDeleteSong,
+}) => {
   const [isEditing, setIsEditing] = useState<number | null>(null);
   const [editableSong, setEditableSong] = useState<Song | null>(null);
 
@@ -36,16 +40,22 @@ const SongList: React.FC<SongListProps> = ({ songs, onUpdateSong, onDeleteSong }
                 <div>
                   <input
                     type="text"
-                    value={editableSong?.title || ''}
+                    value={editableSong?.title || ""}
                     onChange={(e) =>
-                      setEditableSong({ ...editableSong!, title: e.target.value })
+                      setEditableSong({
+                        ...editableSong!,
+                        title: e.target.value,
+                      })
                     }
                   />
                   <input
                     type="text"
-                    value={editableSong?.artist || ''}
+                    value={editableSong?.artist || ""}
                     onChange={(e) =>
-                      setEditableSong({ ...editableSong!, artist: e.target.value })
+                      setEditableSong({
+                        ...editableSong!,
+                        artist: e.target.value,
+                      })
                     }
                   />
                   <button onClick={handleSave}>Save</button>
@@ -69,5 +79,3 @@ const SongList: React.FC<SongListProps> = ({ songs, onUpdateSong, onDeleteSong }
 };
 
 export default SongList;
-
-

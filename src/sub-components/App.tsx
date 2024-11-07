@@ -4,6 +4,26 @@ import SongList from "./SongList";
 import SongForm from "./SongForm";
 import SongFormModal from "./SongFormModal";
 import "../node_modules/bootstrap/dist/css/bootstrap.css";
+import React from 'react';
+import {Route, Routes} from 'react-router-dom';
+import Home from './Home'; // <--- Import your components
+import About from './About'; // <--- Import your components
+import Contact from './Contact'; // <--- Import your components
+
+
+
+
+function App() {
+  return (
+      <Routes> {/* <--- Wrap all your Route components with Routes */}
+          <Route path="/" element={<Home />} />              {/* <--- Define your routes */}
+          <Route path="/about" element={<About />} />        {/* <--- Define your routes */}
+          <Route path="/contact" element={<Contact />} />    {/* <--- Define your routes */}
+      </Routes> {/* <--- Wrap all your Route components with Routes */}
+  );
+}
+
+
 
 export interface Song {
   id: number;
@@ -32,10 +52,10 @@ const App: React.FC = () => {
   // Add a song
   const addSong = (title: String, artist: String) => {
     console.log("addSong ran", title, artist);
-    let newSong ={
-      title:title,
-      artist:artist
-    }
+    let newSong = {
+      title: title,
+      artist: artist,
+    };
     axios
       .post(URL, newSong)
       .then((response) => setSongs([...songs, response.data]))
