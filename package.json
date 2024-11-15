@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://clovato0107.github.io/assignment15",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",

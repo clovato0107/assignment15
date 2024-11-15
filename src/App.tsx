@@ -8,16 +8,16 @@ import { Route, Routes } from "react-router-dom";
 import Home from "./sub-components/Home"; // <--- Import your components
 import About from "./sub-components/About"; // <--- Import your components
 import Contact from "./sub-components/Contact"; // <--- Import your components
-
+import Navbar from "./sub-components/Navbar";
 export interface Song {
-  id: number;
+  id?: number;
   title: string;
   artist: string;
 }
 
 function App() {
   const [songs, setSongs] = useState<Song[]>([]);
-  const [show, setShow] = useState<Boolean>(false);
+  const [show, setShow] = useState<boolean>(false);
 
   const URL = "http://localhost:3000/songs";
   // Fetch the songs from the JSON server
@@ -78,6 +78,7 @@ function App() {
   return (
     <div>
       <div className="App container">
+        <Navbar />
         <h1>My Playlist</h1>
         {/* <SongForm onAddSong={addSong} /> */}
         <SongFormModal show={show} setShow={setShow} addSong={addSong} />
@@ -101,19 +102,5 @@ function App() {
     </div>
   );
 }
-
-// Update a song
-//   const updateTask = (id: number, newText: string) => {
-// fetch(`http://localhost:5000/tasks/${id}`, {
-//   method: 'PUT',
-//   headers: {
-//     'Content-Type': 'application/json',
-//   },
-//   body: JSON.stringify({ text: newText }),
-// })
-//   .then(response => response.json())
-//   .then(updatedTask => {
-//     setTasks(tasks.map((task) => (task.id === id ? updatedTask : task)));
-//   });
 
 export default App;
