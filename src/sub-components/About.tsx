@@ -4,7 +4,7 @@ type Props = {}
 
 function About({}: Props) {
   return (
-    <div>About</div>
+    <div>This is an app to keep track of your favorite songs</div>
   )
 }
 

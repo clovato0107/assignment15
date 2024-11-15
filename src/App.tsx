@@ -5,7 +5,7 @@ import SongList from "./sub-components/SongList";
 import SongFormModal from "./sub-components/SongFormModal";
 import "../node_modules/bootstrap/dist/css/bootstrap.css";
 import { Route, Routes } from "react-router-dom";
-import Home from "./sub-components/Home"; // <--- Import your components
+
 import About from "./sub-components/About"; // <--- Import your components
 import Contact from "./sub-components/Contact"; // <--- Import your components
 import Navbar from "./sub-components/Navbar";
@@ -92,7 +92,6 @@ function App() {
       <Routes>
         {" "}
         {/* <--- Wrap all your Route components with Routes */}
-        <Route path="/" element={<Home />} /> {/* <--- Define your routes */}
         <Route path="/about" element={<About />} />{" "}
         {/* <--- Define your routes */}
         <Route path="/contact" element={<Contact />} />{" "}

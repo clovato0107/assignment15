@@ -5,7 +5,7 @@ type Props = {};
 function MusicCard({}: Props) {
   return (
     <div>
-      <div class="card" style="width: 18rem;">
+      <div className="card">
         <img
           className="card-img-top"
           src="https://rockhall.com/wp-content/uploads/2024/03/depeche_mode_-_FINAL_IMAGE.jpg"
